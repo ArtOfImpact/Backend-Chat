@@ -55,7 +55,7 @@ App.delete('/post/:id', chekAuth, removeOne);
 App.patch('/post/:id', chekAuth, postCreateValidator, updatePost);
 
 
-App.listen(process.env.PORT || 4444, (err) => {
+App.listen(4444, (err) => {
     if (err) {
         return console.log(err);
     }
