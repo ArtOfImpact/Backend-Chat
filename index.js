@@ -13,7 +13,7 @@ import multer from "multer"
 
 //'mongodb+srv://admin:738733@cluster0.csusu6s.mongodb.net/blog?retryWrites=true&w=majority'
 
-mongoose.connect('mongodb+srv://admin:738733@cluster0.csusu6s.mongodb.net/blog?retryWrites=true&w=majority').then(() => {
+mongoose.connect("mongodb+srv://admin:738733@cluster0.csusu6s.mongodb.net/?retryWrites=true&w=majority").then(() => {
     console.log("DB OK")
 }).catch((err) => {
     console.log("DB error", err)
@@ -55,7 +55,7 @@ App.delete('/post/:id', chekAuth, removeOne);
 App.patch('/post/:id', chekAuth, postCreateValidator, updatePost);
 
 
-App.listen(4444, (err) => {
+App.listen(process.env.PORT || 4444, (err) => {
     if (err) {
         return console.log(err);
     }
