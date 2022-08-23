@@ -54,10 +54,12 @@ App.get('/post/:id', One);
 App.delete('/post/:id', chekAuth, removeOne);
 App.patch('/post/:id', chekAuth, postCreateValidator, updatePost);
 
-
-App.listen(process.env.PORT || 4444, (err) => {
+// var listener = App.listen(8888, function () {
+//     console.log('Listening on port ' + listener.address().port); //Listening on port 8888
+// });
+var listener = App.listen(process.env.PORT || 4444, function (err) {
     if (err) {
         return console.log(err);
     }
-    console.log("Server OK");
+    console.log('Listening on port ' + listener.address().port)
 })
